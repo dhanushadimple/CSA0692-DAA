@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+int main() {
+	int choice,ans = 1;
+	printf("choices \n1. integers \n2. string\n");
+	while(ans) {
+		printf("enter your choice : ");
+		scanf("%d",&choice);
+		if(choice == 1){
+			int integer, reverse = 0, remainder;
+			printf("enter the integer : ");
+			scanf("%d",&integer);
+			while(integer !=0){
+				remainder = integer % 10;
+				reverse = reverse*10 + remainder;
+				integer = integer/10;
+			}
+			printf("the reversed integer is : %d\n",reverse);
+		}
+		else if(choice == 2){
+			char string[100];
+			int i,j,length = 0;
+			printf("enter the string : ");
+			scanf("%s",&string);
+			for(i=0; string[i] != '\0';i++){
+				length++;
+			}
+			printf("the length of the string is : %d\n",length);
+			
+			printf("the reversed string is : ");
+			for(i = length-1; i>=0;i--){
+				printf("%c",string[i]);
+			}
+			printf("\n");
+			}
+			else{
+				printf("enter valid choice !!!\n");
+			}
+			printf("\n");
+			printf("do you want to continue ? ");
+			scanf("%d",&ans);
+			printf("\n");
+		}
+	}
+	
